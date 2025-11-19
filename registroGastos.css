@@ -646,6 +646,10 @@
             font-size: 0.75rem;
             line-height: 1.5;
             color: var(--gray-600);
+
+            span:first-child(){
+                margin-right: auto;
+            }   
         }
 
         @media (min-width: 640px) {
@@ -653,10 +657,7 @@
                 flex-direction: row;
                 font-size: 0.875rem;
                 gap: 0;
-                span:nth-child(2){
-                    margin-right: auto;
-                }
-
+            
             }
         }
 
@@ -672,7 +673,9 @@
             text-decoration: none;
             position: relative;
             display: inline-block;
-            
+            span{
+                margin-left: autp;
+            }
         }
 
         .upload-link:focus {

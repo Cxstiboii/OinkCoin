@@ -1,0 +1,492 @@
+/* Estilos base y variables CSS */
+:root {
+  --primary: #4FD1C5;
+  --background-light: #F7FAFC;
+  --background-dark: #102216;
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-300: #e2e8f0;
+  --gray-400: #cbd5e0;
+  --gray-500: #a0aec0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
+  --pink-400: #f472b6;
+  --border-radius: 0.25rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  --border-radius-full: 9999px;
+}
+
+.dark {
+  --bg-primary: var(--background-dark);
+  --text-primary: white;
+  --text-secondary: #92c9a4;
+  --border-color: #326744;
+  --card-bg: #193322;
+  --accent-bg: #112217;
+}
+
+.light {
+  --bg-primary: var(--background-light);
+  --text-primary: var(--gray-800);
+  --text-secondary: var(--gray-600);
+  --border-color: var(--gray-300);
+  --card-bg: var(--gray-50);
+  --accent-bg: var(--gray-100);
+}
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Manrope', 'Noto Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contenedor principal */
+.design-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.design-root > .flex-grow {
+  flex-grow: 1;
+}
+
+/* Layout de grid para pantallas grandes */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Columna de marca (izquierda) */
+.brand-column {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  background-color: var(--accent-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .brand-column {
+    display: flex;
+  }
+}
+
+.brand-column::before {
+  content: '';
+  position: absolute;
+  bottom: -5rem;
+  right: -5rem;
+  width: 18rem;
+  height: 18rem;
+  background-color: rgba(79, 209, 197, 0.2);
+  border-radius: 50%;
+  filter: blur(3rem);
+}
+
+.brand-column::after {
+  content: '';
+  position: absolute;
+  top: -5rem;
+  left: -5rem;
+  width: 18rem;
+  height: 18rem;
+  background-color: rgba(244, 114, 182, 0.1);
+  border-radius: 50%;
+  filter: blur(3rem);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.brand-logo-icon {
+  font-size: 2.25rem;
+  color: var(--pink-400);
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brand-content {
+  z-index: 10;
+}
+
+.brand-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.brand-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.brand-footer {
+  z-index: 10;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Columna de formulario (derecha) */
+.form-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+}
+
+@media (min-width: 640px) {
+  .form-column {
+    padding: 3rem;
+  }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 28rem;
+}
+
+/* Logo móvil */
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .mobile-logo {
+    display: none;
+  }
+}
+
+.mobile-logo-icon {
+  font-size: 1.875rem;
+  color: var(--pink-400);
+}
+
+.mobile-logo-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Encabezado del formulario */
+.form-header {
+  margin-bottom: 1rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+.form-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Toggle de autenticación */
+.auth-toggle {
+  display: flex;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--accent-bg);
+  padding: 0.375rem;
+}
+
+.toggle-option {
+  display: flex;
+  cursor: pointer;
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  padding: 0 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
+  transition: all 0.2s;
+}
+
+.toggle-option input {
+  visibility: hidden;
+  width: 0;
+}
+
+.toggle-option.active {
+  background-color: var(--bg-primary);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: var(--primary);
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  flex: 1;
+}
+
+.form-label-text {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+}
+
+.input-container {
+  position: relative;
+}
+
+.form-input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  resize: none;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  height: 3.5rem;
+  padding: 0.9375rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: normal;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(79, 209, 197, 0.8);
+  box-shadow: 0 0 0 2px rgba(79, 209, 197, 0.5);
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--primary);
+}
+
+/* Recordar y olvidar contraseña */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+  border-radius: var(--border-radius);
+  color: var(--primary);
+  background-color: var(--gray-200);
+  border: 1px solid var(--border-color);
+}
+
+.forgot-password {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Botón de envío */
+.submit-button {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--gray-900);
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: var(--border-radius-lg);
+  height: 3.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-button:hover {
+  background-color: rgba(79, 209, 197, 0.9);
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Divisor */
+.divider {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.divider-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 0.875rem;
+  background-color: var(--bg-primary);
+  padding: 0 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Botones de redes sociales */
+.social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1rem;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.social-button:hover {
+  background-color: var(--accent-bg);
+}
+
+.social-button-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.social-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.social-icon.apple {
+  filter: invert(1);
+}
+
+/* Enlace de registro */
+.register-link {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 2rem;
+}
+
+.register-link a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

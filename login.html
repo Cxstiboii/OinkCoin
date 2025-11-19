@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>OinkCoin - Gestión de Gastos</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="design-root">
+    <div class="flex-grow">
+      <div class="grid-container">
+        <!-- Columna de Marca (Izquierda) -->
+        <div class="brand-column">
+          <div class="brand-logo">
+            <span class="material-symbols-outlined brand-logo-icon">savings</span>
+            <span class="brand-name">OinkCoin</span>
+          </div>
+          <div class="brand-content">
+            <h1 class="brand-title">La gestión de gastos, simplificada.</h1>
+            <p class="brand-description">Toma el control de tus finanzas personales y de negocio con nuestra intuitiva herramienta de seguimiento.</p>
+          </div>
+          <div class="brand-footer">
+            <p>© 2024 OinkCoin. Todos los derechos reservados.</p>
+          </div>
+        </div>
+        
+        <!-- Columna de Formulario (Derecha) -->
+        <div class="form-column">
+          <div class="form-container">
+            <div class="mobile-logo">
+              <span class="material-symbols-outlined mobile-logo-icon">savings</span>
+              <span class="mobile-logo-text">OinkCoin</span>
+            </div>
+            
+            <div class="form-header">
+              <h1 class="form-title">Bienvenido de nuevo</h1>
+              <p class="form-subtitle">Toma el control de tus finanzas.</p>
+            </div>
+            
+            <div class="auth-toggle">
+              <label class="toggle-option active" id="login-toggle">
+                <span>Iniciar Sesión</span>
+                <input type="radio" name="auth-toggle" value="Iniciar Sesión" checked>
+              </label>
+              <label class="toggle-option" id="register-toggle">
+                <span>Crear Cuenta</span>
+                <input type="radio" name="auth-toggle" value="Crear Cuenta">
+              </label>
+            </div>
+            
+            <!-- Formulario de Inicio de Sesión -->
+            <form class="form" id="login-form">
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Correo Electrónico</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">mail</span>
+                    <input class="form-input" placeholder="tu.email@ejemplo.com" type="email" required>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Contraseña</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">lock</span>
+                    <input class="form-input" placeholder="Introduce tu contraseña" type="password" id="login-password" required>
+                    <button class="password-toggle" type="button" onclick="togglePassword('login-password', this)">
+                      <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-options">
+                <label class="remember-me">
+                  <input class="checkbox" type="checkbox">
+                  Recordarme
+                </label>
+                <a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a>
+              </div>
+              
+              <button class="submit-button" type="submit">Iniciar Sesión</button>
+            </form>
+            
+            <!-- Formulario de Registro (oculto inicialmente) -->
+            <form class="form" id="register-form" style="display: none;">
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Nombre Completo</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">person</span>
+                    <input class="form-input" placeholder="Tu nombre completo" type="text" required>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Correo Electrónico</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">mail</span>
+                    <input class="form-input" placeholder="tu.email@ejemplo.com" type="email" required>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Contraseña</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">lock</span>
+                    <input class="form-input" placeholder="Crea una contraseña segura" type="password" id="register-password" required>
+                    <button class="password-toggle" type="button" onclick="togglePassword('register-password', this)">
+                      <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">
+                  <p class="form-label-text">Confirmar Contraseña</p>
+                  <div class="input-container">
+                    <span class="material-symbols-outlined input-icon">lock</span>
+                    <input class="form-input" placeholder="Repite tu contraseña" type="password" id="confirm-password" required>
+                    <button class="password-toggle" type="button" onclick="togglePassword('confirm-password', this)">
+                      <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form-options">
+                <label class="remember-me">
+                  <input class="checkbox" type="checkbox" required>
+                  Acepto los términos y condiciones
+                </label>
+              </div>
+              
+              <button class="submit-button" type="submit">Crear Cuenta</button>
+            </form>
+            
+            
+            <p class="register-link" id="register-link">
+              ¿No tienes una cuenta? <a href="#" onclick="toggleForm('register')">Regístrate</a>
+            </p>
+            <p class="register-link" id="login-link" style="display: none;">
+              ¿Ya tienes una cuenta? <a href="#" onclick="toggleForm('login')">Inicia Sesión</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para alternar entre formularios
+    function toggleForm(type) {
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      const loginToggle = document.getElementById('login-toggle');
+      const registerToggle = document.getElementById('register-toggle');
+      const registerLink = document.getElementById('register-link');
+      const loginLink = document.getElementById('login-link');
+      
+      if (type === 'register') {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'flex';
+        loginToggle.classList.remove('active');
+        registerToggle.classList.add('active');
+        registerLink.style.display = 'none';
+        loginLink.style.display = 'block';
+      } else {
+        loginForm.style.display = 'flex';
+        registerForm.style.display = 'none';
+        loginToggle.classList.add('active');
+        registerToggle.classList.remove('active');
+        registerLink.style.display = 'block';
+        loginLink.style.display = 'none';
+      }
+    }
+    
+    // Función para mostrar/ocultar contraseña
+    function togglePassword(inputId, button) {
+      const passwordInput = document.getElementById(inputId);
+      const icon = button.querySelector('span');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        passwordInput.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+    
+    // Configurar eventos para los toggles
+    document.getElementById('login-toggle').addEventListener('click', () => toggleForm('login'));
+    document.getElementById('register-toggle').addEventListener('click', () => toggleForm('register'));
+    
+    // Manejar envío de formularios
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Aquí iría tu lógica para enviar el formulario de inicio de sesión
+      console.log('Enviando formulario de inicio de sesión');
+      // En JSF, esto enviaría una petición al backend
+    });
+    
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Aquí iría tu lógica para enviar el formulario de registro
+      console.log('Enviando formulario de registro');
+      // En JSF, esto enviaría una petición al backend
+    });
+  </script>
+</body>
+</html>

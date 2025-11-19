@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>OinkCoin - Añadir Nuevo Gasto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="registroGastos.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <span class="material-symbols-outlined">savings</span>
+                </div>
+                <h1 class="logo-text">OinkCoin</h1>
+            </div>
+            <div style="width: 48px;"></div> <!-- Spacer for balance -->
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">savings</span>
+                    </div>
+                    <h1 class="logo-text">OinkCoin</h1>
+                </div>
+                <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="nav-text">Dashboard</p>
+                        </a>
+                        <a class="nav-link active" href="#">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                            <p class="nav-text">Gastos</p>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">credit_card</span>
+                            <p class="nav-text">Ingresos</p>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">bar_chart</span>
+                            <p class="nav-text">Informes</p>
+                        </a>
+                    </div>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <a class="nav-link" href="#">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="nav-text">Ajustes</p>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <span class="material-symbols-outlined">help</span>
+                        <p class="nav-text">Ayuda</p>
+                    </a>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxKmDhyIOqqaCeVYtIE5FR-Soa1dQXzciXtPUgk0Co7bGxOQrK6O-wtDnolf6SQvu-RwnT7AQpi2KZ1AgtKXBQpJL60VgdKLWFQ4850ZLgiaRe2srgcvEH74oXhtWE6oUrs_G3zgdPMGF9BhWaOohFI2Hnz-QAHUQg7zIuB49Oh-Uq30O0ma7PpqMdNFP2YSZRzgMWdOia4qdRueu6X0BV9veYTcWLvf21_OW5GLnlrBJVWUN1efqjUYJVaqOm1ob167iw-o4jwh8");'></div>
+                        <div class="user-info">
+                            <h1 class="user-name">Usuario</h1>
+                            <p class="user-email">usuario@oinkcoin.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Desktop Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">savings</span>
+                    </div>
+                    <h1 class="logo-text">OinkCoin</h1>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="nav-text">Dashboard</p>
+                        </a>
+                        <a class="nav-link active" href="#">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                            <p class="nav-text">Gastos</p>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">credit_card</span>
+                            <p class="nav-text">Ingresos</p>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined">bar_chart</span>
+                            <p class="nav-text">Informes</p>
+                        </a>
+                    </div>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <a class="nav-link" href="#">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="nav-text">Ajustes</p>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <span class="material-symbols-outlined">help</span>
+                        <p class="nav-text">Ayuda</p>
+                    </a>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxKmDhyIOqqaCeVYtIE5FR-Soa1dQXzciXtPUgk0Co7bGxOQrK6O-wtDnolf6SQvu-RwnT7AQpi2KZ1AgtKXBQpJL60VgdKLWFQ4850ZLgiaRe2srgcvEH74oXhtWE6oUrs_G3zgdPMGF9BhWaOohFI2Hnz-QAHUQg7zIuB49Oh-Uq30O0ma7PpqMdNFP2YSZRzgMWdOia4qdRueu6X0BV9veYTcWLvf21_OW5GLnlrBJVWUN1efqjUYJVaqOm1ob167iw-o4jwh8");'></div>
+                        <div class="user-info">
+                            <h1 class="user-name">Usuario</h1>
+                            <p class="user-email">usuario@oinkcoin.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" style = "color: var(--text-primary);">
+            <div class="content-wrapper">
+                <!-- Page Heading -->
+                <div class="page-heading">
+                    <h1 class="page-title">Añadir Nuevo Gasto</h1>
+                    <p class="page-subtitle">Introduce los detalles de tu gasto para mantener tus finanzas al día.</p>
+                </div>
+                
+                <!-- Form -->
+                <div class="form-container">
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label class="form-label" for="description">Descripción</label>
+                        <input class="form-input" id="description" placeholder="Almuerzo de trabajo" type="text"/>
+                    </div>
+                    
+                    <!-- Amount & Category -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="amount">Cantidad</label>
+                            <div class="amount-container">
+                                <span class="currency-symbol">€</span>
+                                <input class="form-input amount-input" id="amount" placeholder="15.50" step="0.01" type="number"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="category">Categoría</label>
+                            <select class="form-select" id="category">
+                                <option>Comida</option>
+                                <option>Transporte</option>
+                                <option>Ocio</option>
+                                <option>Hogar</option>
+                                <option>Salud</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label class="form-label" for="date">Fecha</label>
+                        <input class="form-input" id="date" type="date" value="2024-05-21"/>
+                    </div>
+                    
+                    <!-- File Uploader -->
+                    <div class="form-group">
+                        <label class="form-label">Adjuntar Ticket (Opcional)</label>
+                        <div class="file-upload-container">
+                            <div class="file-upload-area">
+                                <div class="file-upload-content">
+                                    <span class="material-symbols-outlined upload-icon">cloud_upload</span>
+                                    <div class="upload-text">
+                                        <label class="upload-link" for="file-upload">
+                                            <span>Sube un archivo</span>
+                                            <input class="file-input" id="file-upload" name="file-upload" type="file"/>
+                                        </label>
+                                        <span>  o arrástralo y suéltalo</span>
+                                    </div>
+                                    <p class="upload-hint">PNG, JPG, PDF hasta 10MB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button class="btn btn-cancel" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit">Guardar Gasto</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            
+            // Abrir menú móvil
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileSidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Cerrar menú móvil
+            function closeMobileMenu() {
+                mobileSidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            mobileSidebarClose.addEventListener('click', closeMobileMenu);
+            sidebarOverlay.addEventListener('click', closeMobileMenu);
+            
+            // Manejar la subida de archivos
+            const fileInput = document.getElementById('file-upload');
+            const uploadArea = document.querySelector('.file-upload-area');
+            
+            // Mostrar nombre del archivo cuando se selecciona
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    const fileName = e.target.files[0].name;
+                    const uploadText = uploadArea.querySelector('.upload-text');
+                    uploadText.innerHTML = `<span>Archivo seleccionado: <strong>${fileName}</strong></span>`;
+                }
+            });
+            
+            // Manejar drag and drop
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadArea.style.borderColor = 'var(--primary)';
+                uploadArea.style.backgroundColor = 'rgba(72, 187, 120, 0.1)';
+            });
+            
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                uploadArea.style.borderColor = '';
+                uploadArea.style.backgroundColor = '';
+            });
+            
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadArea.style.borderColor = '';
+                uploadArea.style.backgroundColor = '';
+                
+                if (e.dataTransfer.files.length > 0) {
+                    fileInput.files = e.dataTransfer.files;
+                    const fileName = e.dataTransfer.files[0].name;
+                    const uploadText = uploadArea.querySelector('.upload-text');
+                    uploadText.innerHTML = `<span>Archivo seleccionado: <strong>${fileName}</strong></span>`;
+                }
+            });
+            
+            // Manejar envío del formulario
+            const form = document.querySelector('.form-container');
+            const submitBtn = document.querySelector('.btn-primary');
+            
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Aquí iría la lógica para enviar el formulario a JSF
+                alert('Gasto guardado correctamente');
+                // En un caso real, aquí harías una petición a tu backend JSF
+            });
+        });
+    </script>
+</body>
+</html>
